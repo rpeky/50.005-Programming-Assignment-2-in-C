@@ -1,0 +1,59 @@
+# .clang-format — K&R / Attach braces (same line for funcs/structs)
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++03
+
+IndentWidth: 4
+ContinuationIndentWidth: 4
+UseTab: Never
+ColumnLimit: 80
+
+BreakBeforeBraces: Attach       # <- K&R/Attach (same line)
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterFunction: false          # same line
+  AfterNamespace: false
+  AfterStruct: false            # same line
+  AfterUnion: false
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+PointerAlignment: Left
+
+BinPackArguments: false
+BinPackParameters: false
+AlignAfterOpenBracket: Align
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeTernaryOperators: true
+
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignConsecutiveMacros: true
+AlignEscapedNewlines: Left
+AlignOperands: true
+
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^<.*>$'        # system
+    Priority: 1
+  - Regex: '^"include/.*"'
+    Priority: 2
+  - Regex: '^"keys/.*"'
+    Priority: 3
+  - Regex: '^".*"$'        # local
+    Priority: 4
+
+ReflowComments: true
+SpacesBeforeTrailingComments: 2
+IndentPPDirectives: AfterHash
+
